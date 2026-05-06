@@ -74,7 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ── 9. DYNAMIC REPO FETCHING (GitHub API) ── */
     const GITHUB_ORG = 'Devopstrio';
-    const GITHUB_TOKEN = ''; // Add your token here if needed (Note: GitHub will block pushes containing active tokens)
+    // NOTE: This placeholder is replaced during deployment via GitHub Actions
+    const GITHUB_TOKEN = '%%GITHUB_TOKEN%%'; 
 
     async function fetchGitHubRepos() {
         const repoGrid = document.getElementById('repo-grid');
@@ -89,21 +90,45 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         try {
-            const response = await fetch(`https://api.github.com/orgs/${GITHUB_ORG}/repos?per_page=100&sort=pushed`, {
-                headers: {
-                    'Authorization': `token ${GITHUB_TOKEN}`,
-                    'Accept': 'application/vnd.github.v3+json'
-                }
-            });
+            let allRepos = [];
+            let page = 1;
+            let hasMore = true;
 
-            if (!response.ok) throw new Error('Failed to fetch repos');
-            const repos = await response.ok ? await response.json() : [];
+            // Fetch until we get all repos or hit a safety limit
+            while (hasMore && page <= 10) {
+                const headers = { 'Accept': 'application/vnd.github.v3+json' };
+                // Only add token if it has been replaced (isn't the placeholder)
+                if (GITHUB_TOKEN && !GITHUB_TOKEN.startsWith('%%')) {
+                    headers['Authorization'] = `token ${GITHUB_TOKEN}`;
+                }
+
+                const response = await fetch(`https://api.github.com/orgs/${GITHUB_ORG}/repos?per_page=100&page=${page}&sort=pushed`, {
+                    headers: headers
+                });
+
+                if (!response.ok) {
+                    if (response.status === 403) console.warn('GitHub API rate limit reached.');
+                    throw new Error('Failed to fetch repos');
+                }
+
+                const repos = await response.json();
+                if (repos.length === 0) {
+                    hasMore = false;
+                } else {
+                    allRepos = allRepos.concat(repos);
+                    page++;
+                }
+            }
             
             repoGrid.innerHTML = ''; // Clear loading
 
-            repos.forEach(repo => {
-                if (repo.fork) return; // Skip forks
+            if (allRepos.length === 0) {
+                repoGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #888;">No public repositories found.</p>';
+                return;
+            }
 
+            allRepos.forEach(repo => {
+                if (repo.fork) return; // Skip forks
                 const card = createRepoCard(repo);
                 repoGrid.appendChild(card);
             });
