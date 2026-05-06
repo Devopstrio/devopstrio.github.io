@@ -1,5 +1,6 @@
 /* ═══════════════════════════════════════════
    DEVOPSTRIO — Main JavaScript
+   Dynamic Repo Loader + UI Engine
    ═══════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -7,11 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ── 1. HEADER SCROLL EFFECT ── */
     const header = document.getElementById('site-header');
     const onScroll = () => {
-        if (window.scrollY > 40) {
-            header.classList.add('header-scrolled');
-        } else {
-            header.classList.remove('header-scrolled');
-        }
+        header.classList.toggle('header-scrolled', window.scrollY > 40);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
@@ -27,22 +24,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* ── 4. COUNTER ANIMATION ── */
-    function animateCounter(el, target, suffix = '') {
+    /* ── 3. COUNTER ANIMATION ── */
+    function animateCounter(el, target) {
         const duration = 1800;
         const start = performance.now();
         const ease = t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-
         function step(now) {
             const elapsed = Math.min((now - start) / duration, 1);
-            const val = Math.round(ease(elapsed) * target);
-            el.textContent = val + suffix;
+            el.textContent = Math.round(ease(elapsed) * target);
             if (elapsed < 1) requestAnimationFrame(step);
         }
         requestAnimationFrame(step);
     }
 
-    /* ── 5. SCROLL REVEAL + COUNTER TRIGGER ── */
+    /* ── 4. SCROLL REVEAL + COUNTER TRIGGER ── */
     const countersTriggered = new Set();
 
     const revealObserver = new IntersectionObserver(entries => {
@@ -62,8 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const el = entry.target;
                 if (!countersTriggered.has(el)) {
                     countersTriggered.add(el);
-                    const target = parseInt(el.dataset.target, 10);
-                    animateCounter(el, target);
+                    animateCounter(el, parseInt(el.dataset.target, 10));
                     counterObserver.unobserve(el);
                 }
             }
@@ -72,102 +66,149 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
 
-    /* ── 9. DYNAMIC REPO FETCHING (GitHub API) ── */
+    /* ══════════════════════════════════════════════
+       ── 9. DYNAMIC REPO LOADER (GitHub API) ──
+       Auto-loads repos from GitHub on every page visit.
+       The site auto-updates when new repos are pushed.
+    ══════════════════════════════════════════════ */
+
     const GITHUB_ORG = 'Devopstrio';
-    // NOTE: This placeholder is replaced during deployment via GitHub Actions
-    const GITHUB_TOKEN = '%%GITHUB_TOKEN%%'; 
+    // Token placeholder — replaced during deployment via GitHub Actions secret injection.
+    // When not injected (local dev), falls back to unauthenticated API (60 req/hr limit).
+    const GITHUB_TOKEN = '%%GITHUB_TOKEN%%';
+
+    // Category icon map — each category gets a unique SVG for visual richness
+    const CATEGORY_ICONS = {
+        'landing-zone': `<path d="M2.25 12L12 2.25l9.75 9.75M4.5 10.5V21h6v-6h3v6h6V10.5"/>`,
+        'ai': `<path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/>`,
+        'security': `<path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>`,
+        'devops': `<path d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"/>`,
+        'vdi': `<rect width="18" height="12" x="3" y="4" rx="2"/><line x1="2" x2="22" y1="20" y2="20"/><line x1="12" x2="12" y1="16" y2="20"/>`,
+        'industry': `<path d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/>`,
+        'data': `<path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/>`,
+    };
 
     async function fetchGitHubRepos() {
         const repoGrid = document.getElementById('repo-grid');
         if (!repoGrid) return;
 
-        // Show loading state
+        // Show premium loading state
         repoGrid.innerHTML = `
-            <div style="grid-column: 1/-1; text-align: center; padding: 40px; color: #888;">
-                <div class="status-dot" style="display: inline-block; margin-bottom: 10px;"></div>
-                <p>Syncing live accelerators from GitHub...</p>
-            </div>
-        `;
+            <div style="grid-column:1/-1; text-align:center; padding:60px 20px;">
+                <div style="display:inline-flex; align-items:center; gap:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:16px 28px;">
+                    <span class="status-dot" style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#ce2453; animation:pulse 1.4s ease-in-out infinite;"></span>
+                    <span style="color:#aaa; font-size:0.95rem;">Syncing live accelerators from GitHub...</span>
+                </div>
+            </div>`;
+
+        const isAuthenticated = GITHUB_TOKEN && !GITHUB_TOKEN.startsWith('%%');
+        const headers = { 'Accept': 'application/vnd.github.v3+json' };
+        if (isAuthenticated) headers['Authorization'] = `token ${GITHUB_TOKEN}`;
 
         try {
             let allRepos = [];
             let page = 1;
-            let hasMore = true;
 
-            // Fetch until we get all repos or hit a safety limit
-            while (hasMore && page <= 10) {
-                const headers = { 'Accept': 'application/vnd.github.v3+json' };
-                // Only add token if it has been replaced (isn't the placeholder)
-                if (GITHUB_TOKEN && !GITHUB_TOKEN.startsWith('%%')) {
-                    headers['Authorization'] = `token ${GITHUB_TOKEN}`;
+            while (page <= 10) {
+                const res = await fetch(
+                    `https://api.github.com/orgs/${GITHUB_ORG}/repos?per_page=100&page=${page}&sort=pushed&type=public`,
+                    { headers }
+                );
+
+                if (res.status === 403 || res.status === 429) {
+                    console.warn('GitHub API rate limit reached — showing partial results.');
+                    break;
                 }
+                if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
 
-                const response = await fetch(`https://api.github.com/orgs/${GITHUB_ORG}/repos?per_page=100&page=${page}&sort=pushed`, {
-                    headers: headers
-                });
+                const batch = await res.json();
+                if (!batch.length) break;
 
-                if (!response.ok) {
-                    if (response.status === 403) console.warn('GitHub API rate limit reached.');
-                    throw new Error('Failed to fetch repos');
-                }
-
-                const repos = await response.json();
-                if (repos.length === 0) {
-                    hasMore = false;
-                } else {
-                    allRepos = allRepos.concat(repos);
-                    page++;
-                }
+                allRepos = allRepos.concat(batch.filter(r => !r.fork && !r.archived));
+                page++;
             }
-            
-            repoGrid.innerHTML = ''; // Clear loading
 
-            if (allRepos.length === 0) {
-                repoGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #888;">No public repositories found.</p>';
+            // Update live stat counter
+            const statEl = document.getElementById('stat-repos');
+            if (statEl && allRepos.length > 0) {
+                statEl.dataset.target = allRepos.length;
+                animateCounter(statEl, allRepos.length);
+            }
+
+            // Update filter button count
+            const allBtn = document.getElementById('filter-all');
+            if (allBtn) allBtn.textContent = `All (${allRepos.length})`;
+
+            // Render cards
+            repoGrid.innerHTML = '';
+            if (!allRepos.length) {
+                repoGrid.innerHTML = `<p style="grid-column:1/-1;text-align:center;color:#888;padding:40px 0;">
+                    No public repositories found in the ${GITHUB_ORG} organization.
+                </p>`;
                 return;
             }
 
             allRepos.forEach(repo => {
-                if (repo.fork) return; // Skip forks
-                const card = createRepoCard(repo);
-                repoGrid.appendChild(card);
+                repoGrid.appendChild(createRepoCard(repo));
             });
 
-            // Re-bind filter logic to new cards
+            // Show "Live" sync badge above the grid
+            const syncBadge = document.getElementById('live-sync-badge');
+            if (syncBadge) {
+                syncBadge.innerHTML = `
+                    <span style="display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;color:#4ade80;background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.2);border-radius:99px;padding:4px 12px;">
+                        <span style="width:6px;height:6px;border-radius:50%;background:#4ade80;display:inline-block;"></span>
+                        Live · ${allRepos.length} repos loaded from GitHub
+                    </span>`;
+            }
+
             bindFilterLogic();
-            
-            // Re-trigger reveal animations
             document.querySelectorAll('.repo-card').forEach(el => revealObserver.observe(el));
 
-        } catch (error) {
-            console.error('GitHub API Error:', error);
-            repoGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #ce2453;">Unable to sync live repositories. Showing offline catalog.</p>';
+        } catch (err) {
+            console.error('GitHub API Error:', err);
+            repoGrid.innerHTML = `
+                <div style="grid-column:1/-1;text-align:center;padding:40px;color:#888;">
+                    <p style="color:#ce2453;margin-bottom:8px;">⚠ Unable to load live repositories.</p>
+                    <p style="font-size:0.85rem;">Check your connection or <a href="https://github.com/${GITHUB_ORG}" target="_blank" style="color:#ce2453;">browse on GitHub →</a></p>
+                </div>`;
         }
     }
 
     function createRepoCard(repo) {
         const categories = mapTopicsToCategories(repo);
-        const langClass = (repo.language || 'docs').toLowerCase();
-        
+        const primaryCat = categories[0] || 'devops';
+        const langClass = (repo.language || 'docs').toLowerCase().replace(/[^a-z0-9]/g, '');
+        const iconPath = CATEGORY_ICONS[primaryCat] || CATEGORY_ICONS['devops'];
+        const stars = repo.stargazers_count || 0;
+        const updatedDate = new Date(repo.pushed_at).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
+
         const card = document.createElement('div');
         card.className = 'repo-card reveal';
         card.dataset.category = categories.join(' ');
 
         card.innerHTML = `
             <div class="repo-card-top">
-                <div class="repo-icon ${categories[0] || 'cloud'}">
+                <div class="repo-icon ${primaryCat}">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253M3.157 7.582A8.959 8.959 0 0 0 3 12c0 .778.099 1.533.284 2.253" />
+                        ${iconPath}
                     </svg>
                 </div>
                 <div class="repo-tags">
-                    ${categories.map(cat => `<span class="tag tag-${cat}">${cat.replace('-', ' ')}</span>`).join('')}
+                    ${categories.map(cat => `<span class="tag tag-${cat}">${cat.replace(/-/g, ' ')}</span>`).join('')}
                 </div>
             </div>
             <h5>${repo.name}</h5>
             <p>${repo.description || 'Enterprise acceleration blueprint by Devopstrio.'}</p>
             <div class="repo-meta">
-                <span class="repo-lang"><span class="lang-dot ${langClass}"></span>${repo.language || 'Documentation'}</span>
+                <span class="repo-lang">
+                    <span class="lang-dot ${langClass}"></span>
+                    ${repo.language || 'Documentation'}
+                </span>
+                <span style="font-size:0.78rem;color:#666;display:flex;align-items:center;gap:4px;">
+                    ${stars > 0 ? `<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg> ${stars}` : ''}
+                    <span style="color:#444;">${updatedDate}</span>
+                </span>
                 <a href="${repo.html_url}" target="_blank" rel="noopener" class="repo-link">View Repo ↗</a>
             </div>
         `;
@@ -179,14 +220,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const name = repo.name.toLowerCase();
         const cats = new Set();
 
-        if (topics.some(t => ['landing-zone', 'caf', 'governance', 'subscription'].includes(t)) || name.includes('landingzone') || name.includes('landing-zone')) cats.add('landing-zone');
-        if (topics.some(t => ['ai', 'openai', 'llm', 'rag', 'data', 'fabric', 'databricks'].includes(t)) || name.includes('ai') || name.includes('data')) cats.add('ai');
-        if (topics.some(t => ['security', 'zero-trust', 'defender', 'iam', 'compliance'].includes(t)) || name.includes('security') || name.includes('trust')) cats.add('security');
-        if (topics.some(t => ['vdi', 'avd', 'w365', 'desktop'].includes(t)) || name.includes('avd') || name.includes('vdi')) cats.add('vdi');
-        if (topics.some(t => ['fintech', 'healthcare', 'telecom', 'retail', 'industry', 'bank'].includes(t))) cats.add('industry');
-        if (topics.some(t => ['devops', 'terraform', 'bicep', 'actions', 'cicd', 'yaml', 'gitops'].includes(t)) || name.includes('devops') || name.includes('tf-') || name.includes('terraform')) cats.add('devops');
+        const matches = (topicList, nameFragments = []) =>
+            topics.some(t => topicList.includes(t)) || nameFragments.some(f => name.includes(f));
 
-        if (cats.size === 0) cats.add('devops'); // Default
+        if (matches(['landing-zone','caf','governance','subscription'], ['landingzone','landing-zone'])) cats.add('landing-zone');
+        if (matches(['ai','openai','llm','rag','genai','fabric','databricks','ml','mlops'], ['ai','data','llm','rag','genai','mlflow','lakehouse'])) cats.add('ai');
+        if (matches(['security','zero-trust','defender','iam','compliance','siem','devsecops'], ['security','trust','zero-trust','compliance','siem','vault','privileged'])) cats.add('security');
+        if (matches(['vdi','avd','w365','desktop','fslogix'], ['avd','vdi','w365','windows-365'])) cats.add('vdi');
+        if (matches(['fintech','healthcare','telecom','retail','industry','bank','government'], ['lz','financial','healthcare','insurance','automotive'])) cats.add('industry');
+        if (matches(['devops','terraform','bicep','actions','cicd','yaml','gitops','ansible','kubernetes','docker'], ['devops','tf-','terraform','bicep','platform','k8s','helm','gitops'])) cats.add('devops');
+
+        if (cats.size === 0) cats.add('devops');
         return Array.from(cats);
     }
 
@@ -197,6 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 const filter = btn.dataset.filter;
+                let visibleCount = 0;
 
                 document.querySelectorAll('.repo-card').forEach(card => {
                     const cats = (card.dataset.category || '').split(' ');
@@ -204,7 +249,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (show) {
                         card.classList.remove('hidden');
                         requestAnimationFrame(() => card.classList.add('visible'));
+                        visibleCount++;
                     } else {
+                        card.classList.remove('visible');
                         card.classList.add('hidden');
                     }
                 });
@@ -212,13 +259,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initialize
+    // Initialize — runs on every page load, auto-syncing from GitHub
     fetchGitHubRepos();
 
     /* ── 10. FOOTER YEAR ── */
     const yearEl = document.getElementById('current-year');
-    if (yearEl) {
-        yearEl.textContent = new Date().getFullYear();
-    }
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 });
