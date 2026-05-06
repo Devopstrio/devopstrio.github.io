@@ -1,177 +1,156 @@
-# Devopstrio
+<div align="center">
 
-Cloud | AI | DevOps | Security | Platform Engineering
+<img src="https://raw.githubusercontent.com/Devopstrio/.github/main/assets/Browser_logo.png" height="72" alt="Devopstrio Logo" />
 
-Enterprise-ready Landing Zone accelerators, architecture blueprints, and cloud-native engineering solutions across Azure, AWS, GCP, Kubernetes, AI, and DevOps.
+<h1>Devopstrio | Accelerator Portal</h1>
 
----
+<p><strong>Enterprise Engineering &nbsp;&middot;&nbsp; Cloud Architecture &nbsp;&middot;&nbsp; AI Transformation</strong></p>
 
-## Purpose
+[![Website](https://img.shields.io/badge/Corporate_Site-devopstrio.co.uk-522c72?style=for-the-badge&labelColor=0d0d0d)](https://devopstrio.co.uk/)
+[![GitHub](https://img.shields.io/badge/GitHub-Organization-962964?style=for-the-badge&labelColor=0d0d0d)](https://github.com/Devopstrio)
+<a href="https://github.com/orgs/devopstrio/repositories"><img src="https://img.shields.io/badge/Repos-180+_Public-ce2453?style=for-the-badge&labelColor=0d0d0d" alt="Repos"/></a>
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-dd5c54?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0d0d0d)](https://www.linkedin.com/company/devopstrioglobal/)
+[![Email](https://img.shields.io/badge/Email-Contact_Us-e79e57?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0d0d0d)](mailto:info@devopstrioglobal.com)
 
-This repository serves as the public engineering and architecture portal for Devopstrio. It provides high-level reference architectures, platform accelerators, landing zone frameworks, and infrastructure automation guidance for enterprise cloud environments.
+<br/>
 
----
+> **This repository serves as the public engineering and architecture portal for Devopstrio, providing high-level reference architectures and platform accelerators for enterprise cloud environments.**
 
-## Project Scope
-
-This repository includes:
-
-- Enterprise Landing Zone reference models
-- AI and GenAI platform architectures
-- Kubernetes and DevOps foundations
-- Security and Zero Trust blueprints
-- Infrastructure as Code examples
-- Platform engineering standards
-- Multi-cloud architecture guidance
-
-This repository does not contain:
-- Production credentials
-- Sensitive infrastructure details
-- Customer-specific configurations
-- Internal-only operational secrets
+</div>
 
 ---
 
-## Target Audience
+## 🏛️ Purpose & Mission
 
-- Cloud Architects
-- Platform Engineers
-- DevOps Engineers
-- Security Engineers
-- Enterprise Technology Teams
-- Solution Architects
-- Engineering Leadership
+Devopstrio is dedicated to turning complex engineering challenges into high-performing, automated systems. This portal provides the definitive open-source reference for:
+- **Enterprise Landing Zones**: CAF-aligned governance foundations.
+- **AI Transformation**: Secure GenAI and RAG infrastructure.
+- **Platform Engineering**: Scalable Kubernetes and DevOps foundations.
+- **Zero Trust Security**: Identity-driven network and compliance blueprints.
 
 ---
 
-## Core Capability Areas
+## 📂 Repository Structure
 
-### Cloud Platforms
-- Microsoft Azure
-- Amazon Web Services (AWS)
-- Google Cloud Platform (GCP)
-- Oracle Cloud Infrastructure (OCI)
-
-### Platform Engineering
-- Kubernetes
-- Terraform
-- Bicep
-- CI/CD Automation
-- GitOps
-
-### AI & Data
-- Azure OpenAI
-- GenAI Reference Architectures
-- LLMOps
-- Data Lakehouse Platforms
-
-### Security
-- Zero Trust
-- Identity & RBAC
-- Network Security
-- Compliance Baselines
-
----
-
-## Repository Structure
+The portal is organized into specialized domains to accelerate your cloud journey:
 
 ```text
-/docs
-/architecture
-/modules
-/platforms
-/security
-/landing-zones
+/docs             # Comprehensive technical documentation
+/architecture     # High-level reference models & diagrams
+/modules          # Reusable IaC (Terraform/Bicep) building blocks
+/platforms        # Cloud-native platform foundations (AKS/EKS/GKE)
+/security         # Security baselines & compliance guardrails
+/landing-zones    # Specialized Landing Zone reference models
 ```
 
 ---
 
-## Getting Started
+## ⚡ Core Capability Areas
 
-### 1. Setup (High-Level)
-Clone repository:
-`git clone https://github.com/Devopstrio/devopstrio.github.io.git`
+### Cloud & Platforms
+- **Multi-Cloud**: Microsoft Azure, AWS, Google Cloud (GCP).
+- **Containerization**: Hardened AKS, EKS, and GKE foundations.
+- **Automation**: Terraform, Bicep, GitHub Actions, and GitOps.
 
-### 2. Review architecture documentation
-Explore the `/architecture` directory for high-level reference models.
+### AI & Data
+- **GenAI**: Secure Azure OpenAI and LLMOps pipelines.
+- **Data**: Lakehouse architectures on Fabric, Databricks, and Snowflake.
 
-### 3. Configure environment variables
-Ensure all necessary cloud credentials and environment variables are set.
-
-### 4. Deploy infrastructure modules
-Follow the instructions in the `/modules` directory for specific IaC deployments.
-
-### 5. Validate platform baselines
-Run the validation scripts in the `/platforms` directory.
+### Security & Governance
+- **Zero Trust**: Identity-first security and network segmentation.
+- **Compliance**: Automated guardrails for SOC2, ISO, HIPAA, and NIST.
 
 ---
 
-## Deployment Model (High-Level)
+## 🚀 Getting Started
 
-This repository supports:
-- Infrastructure as Code deployments
-- GitHub Actions CI/CD workflows
-- Multi-environment deployment models
-- Secure cloud-native provisioning
-- Policy-driven governance
+### 1. Exploration
+Browse the `/architecture` directory to understand our principal reference models before diving into the code.
 
----
+### 2. Implementation
+Clone the repository to access the modular building blocks:
+```bash
+git clone https://github.com/Devopstrio/devopstrio.github.io.git
+```
 
-## Engineering Standards
-
-### Coding Standards
-- Infrastructure as Code preferred
-- Reusable modular architecture
-- Secure-by-default configurations
-- Consistent naming standards
-- Documentation-first approach
-
-### Naming Conventions
-Examples:
-- `azure-enterprise-landing-zone`
-- `terraform-network-foundation`
-- `aks-production-platform`
-
-General rules:
-- lowercase
-- hyphen-separated
-- capability-focused naming
+### 3. Deployment
+Refer to the `README.md` within specific `/modules` or `/landing-zones` for detailed deployment instructions and prerequisites.
 
 ---
 
-## Versioning
+## 🛠️ Engineering Standards
 
-This repository follows semantic versioning principles where applicable:
-`Major.Minor.Patch`
-Example: `v1.0.0`
+We adhere to rigorous standards to ensure all accelerators are production-grade:
 
----
-
-## Contribution Guidelines
-
-We welcome structured contributions. Please:
-- Open an issue before major changes
-- Follow repository naming standards
-- Include documentation updates
-- Submit pull requests for review
-
-See:
-- `CONTRIBUTING.md`
-- `GOVERNANCE.md`
+- **Infrastructure as Code**: Everything is defined through code (IaC first).
+- **Secure-by-Design**: Security is integrated into the baseline, not added later.
+- **Documentation-First**: Every blueprint is backed by comprehensive architectural guidance.
+- **Modular Architecture**: Components are designed for reuse and scalability.
 
 ---
 
-## Contact
+## 🤝 Contribution & Governance
 
-- **Website**: [https://devopstrio.co.uk](https://devopstrio.co.uk)
-- **LinkedIn**: [Devopstrio](https://www.linkedin.com/company/devopstrioglobal/)
-- **Email**: media@devopstrioglobal.com
+We welcome structured contributions from the community. Please review our governing documents before submitting updates:
 
----
-
-## License
-
-This repository is licensed under the MIT License unless otherwise specified.
+- [**Contributing Guidelines**](CONTRIBUTING.md) — How to participate.
+- [**Governance Model**](GOVERNANCE.md) — How we maintain standards.
+- [**License**](LICENSE) — This project is licensed under the MIT License.
 
 ---
-© 2026 Devopstrio Acceleration Partner
+
+## 📞 Get In Touch
+
+<table width="100%">
+<tr>
+<td width="33%" valign="top">
+
+**Contact Details**
+- **Phone:** +44 7471 482903
+- **Web:** [devopstrio.co.uk](https://devopstrio.co.uk)
+- **Email:** [info@devopstrioglobal.com](mailto:info@devopstrioglobal.com)
+
+**Address**
+128 City Road, London,  
+EC1V 2NX, United Kingdom
+
+</td>
+<td width="33%" valign="top">
+
+**Social Media**
+- [**LinkedIn**](https://www.linkedin.com/company/devopstrioglobal/)
+- [**Instagram**](https://instagram.com/devopstrio_offcl)
+- [**Facebook**](https://facebook.com/devopstrio)
+
+**Global Presence**
+- **HQ:** London, UK
+- **Offices:** NY (USA), India (Bangalore)
+
+</td>
+<td width="33%" valign="top">
+
+**Delivery & Operations**
+- **Model:** Hybrid (On/Offshore)
+- **Support:** 24/7 Global Delivery
+- **Compliance:** GDPR, HIPAA, ISO
+
+</td>
+</tr>
+</table>
+
+<div align="center">
+
+<br/>
+
+### *Innovate with Confidence. Scale with Precision.*
+
+<img src="https://raw.githubusercontent.com/Devopstrio/.github/main/assets/Browser_logo.png" height="60" alt="Devopstrio Logo" />
+
+**Devopstrio Acceleration Partner**  
+*The standard for enterprise cloud, data, and AI transformation.*
+
+<br/>
+
+**[Back to Top](#devopstrio--accelerator-portal)** &nbsp;&nbsp;•&nbsp;&nbsp; **[Our Repositories](https://github.com/orgs/devopstrio/repositories)** &nbsp;&nbsp;•&nbsp;&nbsp; **[Contact Us](mailto:info@devopstrioglobal.com)**
+
+</div>
