@@ -2256,46 +2256,122 @@ ol {
 .btn-journey:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(206, 36, 83, 0.4); }
 .btn-expert:hover { background: rgba(255, 255, 255, 0.05); border-color: #ffffff; transform: translateY(-3px); }
 
-/* ═══════ LOGO BAR ═══════ */
-.logo-bar {
+/* ═══════ TRUST & ECOSYSTEM MARQUEE ═══════ */
+.trust-marquee-section {
     background: #000000;
-    padding: 40px 0;
+    padding: 80px 0 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
 }
 
-.logo-bar-container {
+.trust-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.trust-pill {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(206, 36, 83, 0.1);
+    border: 1px solid rgba(206, 36, 83, 0.2);
+    border-radius: 99px;
+    color: #ce2453;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+}
+
+.trust-header h3 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.trust-header p {
+    color: #888;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+}
+
+.logo-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.logo-marquee-wrapper::before,
+.logo-marquee-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.logo-marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #000 0%, transparent 100%);
+}
+
+.logo-marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #000 0%, transparent 100%);
+}
+
+.logo-marquee-track {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    width: max-content;
+    gap: 80px;
+    animation: logoScroll 40s linear infinite;
+}
+
+@keyframes logoScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }
 
 .logo-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    opacity: 0.6;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: grayscale(40%) contrast(0.8);
+    gap: 14px;
+    opacity: 0.55;
+    transition: all 0.4s ease;
+    filter: grayscale(100%);
+    white-space: nowrap;
 }
 
 .logo-item:hover {
     opacity: 1;
-    filter: grayscale(0%) contrast(1);
+    filter: grayscale(0%);
     transform: translateY(-2px);
 }
 
 .logo-item img {
-    height: 24px;
+    height: 28px;
     width: auto;
+    max-width: 140px;
+    object-fit: contain;
 }
 
 .logo-item span {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: #ffffff;
+    letter-spacing: 0.01em;
+}
+
+@media (max-width: 768px) {
+    .trust-header h3 { font-size: 1.75rem; }
+    .logo-marquee-track { gap: 40px; }
+    .logo-item img { height: 22px; }
 }
 
 @media (max-width: 768px) {
