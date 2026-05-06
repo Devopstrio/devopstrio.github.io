@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devopstrio | Cloud · AI · DevOps Acceleration Platform</title>
+  <meta name="description"
+    content="Enterprise Landing Zone & AI Transformation Specialists. Open-source blueprints, Terraform modules, and GenAI-ready architectures by Devopstrio.">
+  <meta name="theme-color" content="#060b14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/Browser_logo.png">
+</head>
+
+<body>
+
+  <!-- ═══════ HEADER ═══════ -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="#top" class="logo" id="logo">
+        <img src="assets/Browser_logo.png" alt="Devopstrio" class="logo-img">
+        Devopstrio
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="https://devopstrio.co.uk/services">Services</a></li>
+          <li><a href="https://devopstrio.co.uk/platform">Platform</a></li>
+          <li><a href="#repos">Ecosystem</a></li>
+          <li><a href="https://devopstrio.co.uk/insights">Insights</a></li>
+          <li><a href="https://devopstrio.co.uk/careers">Careers</a></li>
+          <li><a href="https://devopstrio.co.uk/about">About</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a href="https://github.com/devopstrio" target="_blank" rel="noopener" class="btn-ghost" id="github-header-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+          </svg>
+          GitHub
+        </a>
+        <a href="#contact" class="btn-contact-nav" id="cta-header-btn">Contact Us</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══════ HERO ═══════ -->
+  <section class="hero-new" id="top">
+    <div class="container hero-container-new">
+      <div class="hero-left">
+        <div class="hero-badge-new reveal">
+          <span class="badge-dot"></span>
+          Engineering Excellence
+        </div>
+        <h1 class="hero-title-new reveal">
+          Advancing Cloud<br>
+          <span class="gradient-text">AI & Platforms</span><br>
+          Innovation
+        </h1>
+        <div class="hero-divider reveal"></div>
+        <p class="hero-subtitle-new reveal">
+          We turn complex engineering challenges into high-performing, automated systems built for speed, scale, and long-term impact.
+        </p>
+        <div class="hero-actions-new reveal">
+          <a href="https://devopstrio.co.uk" target="_blank" class="btn-consultation">
+            Get a Free Consultation
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-right reveal">
+        <div class="hero-image-wrapper">
+          <img src="assets/hero-portrait.png" alt="Devopstrio Solutions" class="hero-portrait">
+          <div class="image-overlay-bottom"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ TECH MARQUEE ═══════ -->
+  <div class="tech-strip">
+    <div class="marquee-track" id="marquee-track">
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/terraform" alt="Terraform" class="marquee-logo">
+        Terraform
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/microsoftazure" alt="Azure" class="marquee-logo">
+        Azure
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/openai" alt="Azure OpenAI" class="marquee-logo">
+        Azure OpenAI
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/kubernetes" alt="Kubernetes" class="marquee-logo">
+        Kubernetes
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/amazonaws" alt="AWS" class="marquee-logo">
+        AWS
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/googlecloud" alt="GCP" class="marquee-logo">
+        GCP
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/githubactions" alt="GitHub Actions" class="marquee-logo">
+        GitHub Actions
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/ansible" alt="Ansible" class="marquee-logo">
+        Ansible
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/vault" alt="Vault" class="marquee-logo">
+        Vault
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/grafana" alt="Grafana" class="marquee-logo">
+        Grafana
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/prometheus" alt="Prometheus" class="marquee-logo">
+        Prometheus
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/databricks" alt="Databricks" class="marquee-logo">
+        Databricks
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/docker" alt="Docker" class="marquee-logo">
+        Docker
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/elasticsearch" alt="Elastic" class="marquee-logo">
+        Elastic
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/python" alt="Python" class="marquee-logo">
+        Python
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/linux" alt="Linux" class="marquee-logo">
+        Linux
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/terraform" alt="Terraform" class="marquee-logo">
+        Terraform
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/microsoftazure" alt="Azure" class="marquee-logo">
+        Azure
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/openai" alt="Azure OpenAI" class="marquee-logo">
+        Azure OpenAI
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/kubernetes" alt="Kubernetes" class="marquee-logo">
+        Kubernetes
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/amazonaws" alt="AWS" class="marquee-logo">
+        AWS
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/googlecloud" alt="GCP" class="marquee-logo">
+        GCP
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/githubactions" alt="GitHub Actions" class="marquee-logo">
+        GitHub Actions
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/ansible" alt="Ansible" class="marquee-logo">
+        Ansible
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/vault" alt="Vault" class="marquee-logo">
+        Vault
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/grafana" alt="Grafana" class="marquee-logo">
+        Grafana
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/prometheus" alt="Prometheus" class="marquee-logo">
+        Prometheus
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/databricks" alt="Databricks" class="marquee-logo">
+        Databricks
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/docker" alt="Docker" class="marquee-logo">
+        Docker
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/elasticsearch" alt="Elastic" class="marquee-logo">
+        Elastic
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/python" alt="Python" class="marquee-logo">
+        Python
+      </div>
+      <div class="marquee-item">
+        <img src="https://cdn.simpleicons.org/linux" alt="Linux" class="marquee-logo">
+        Linux
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ SERVICES ═══════ -->
+  <section id="services" class="section tiers-section">
+    <div class="container">
+      <div class="section-header reveal" id="services-header">
+        <div class="section-tag">What We Build</div>
+        <h2>High-Demand <span class="gradient-text">Enterprise Bundles</span></h2>
+        <p>Curated solutions for rapid digital modernization across Cloud, AI, and DevOps.</p>
+      </div>
+
+      <div class="tier-grid">
+        <div class="tier-card reveal reveal-delay-1" id="tier-cloud">
+          <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+            </svg></span>
+          <h3>Enterprise Landing Zone</h3>
+          <p>CAF-based governance foundations for Azure, AWS, and GCP with policy-as-code and subscription vending.</p>
+          <ul class="card-features">
+            <li>Multi-tenant Governance</li>
+            <li>Network Segmentation</li>
+            <li>Identity Integration</li>
+          </ul>
+          <a href="#repos" class="card-link">Explore blueprints →</a>
+        </div>
+
+        <div class="tier-card featured reveal reveal-delay-2" id="tier-ai">
+          <div class="featured-label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+              width="11" height="11">
+              <path fill-rule="evenodd"
+                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                clip-rule="evenodd" />
+            </svg> Top Choice</div>
+          <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0 3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" />
+            </svg></span>
+          <h3>AI Landing Zone</h3>
+          <p>GenAI-ready. Secure OpenAI, Bedrock, and Vertex AI deployment at enterprise scale with RAG pipelines.</p>
+          <ul class="card-features">
+            <li>Enterprise RAG Ready</li>
+            <li>AI Governance &amp; Safety</li>
+            <li>Scalable LLM Pipelines</li>
+          </ul>
+          <a href="#repos" class="card-link">Explore blueprints →</a>
+        </div>
+
+        <div class="tier-card reveal reveal-delay-3" id="tier-data">
+          <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+            </svg></span>
+          <h3>Data Landing Zone</h3>
+          <p>Lakehouse architectures with Microsoft Fabric, Databricks, and Snowflake for real-time analytics.</p>
+          <ul class="card-features">
+            <li>Real-time Analytics</li>
+            <li>Data Mesh Patterns</li>
+            <li>Automated Governance</li>
+          </ul>
+          <a href="#repos" class="card-link">Explore blueprints →</a>
+        </div>
+
+        <div class="tier-card reveal reveal-delay-4" id="tier-security">
+          <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+            </svg></span>
+          <h3>Security &amp; Compliance</h3>
+          <p>Zero Trust architecture, IAM blueprints, and Defender suite automation aligned to CIS and NIST.</p>
+          <ul class="card-features">
+            <li>Zero Trust Model</li>
+            <li>Compliance Automation</li>
+            <li>DevSecOps Pipelines</li>
+          </ul>
+          <a href="#repos" class="card-link">Explore blueprints →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ STATS BAR ═══════ -->
+  <section id="stats" class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-num" data-target="180" id="stat-repos">0</div>
+          <div class="stat-label">Cloud Accelerators</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-num" data-target="15" id="stat-domains">0</div>
+          <div class="stat-label">Technology Domains</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-num" data-target="3" id="stat-clouds">0</div>
+          <div class="stat-label">Cloud Providers</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-num" data-target="95" id="stat-modules">0</div>
+          <div class="stat-label">Reference Architectures</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ REPOSITORIES ═══════ -->
+  <section id="repos" class="section repos-section">
+    <div class="container">
+      <div class="section-header reveal" id="repos-header">
+        <div class="section-tag">Open Source</div>
+        <h2>Public <span class="gradient-text">Repositories</span></h2>
+        <p>Production-grade blueprints that establish instant credibility and accelerate delivery.</p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar reveal" id="filter-bar">
+        <button class="filter-btn active" data-filter="all" id="filter-all">All (180+)</button>
+        <button class="filter-btn" data-filter="landing-zone" id="filter-lz">Landing Zones</button>
+        <button class="filter-btn" data-filter="ai" id="filter-ai">AI & Data</button>
+        <button class="filter-btn" data-filter="security" id="filter-security">Security</button>
+        <button class="filter-btn" data-filter="vdi" id="filter-vdi">VDI / AVD</button>
+        <button class="filter-btn" data-filter="industry" id="filter-industry">Industry</button>
+        <button class="filter-btn" data-filter="devops" id="filter-devops">DevOps</button>
+      </div>
+
+      <!-- Repo Grid (Dynamic) -->
+      <div class="repo-grid" id="repo-grid">
+        <div style="grid-column: 1/-1; text-align: center; padding: 40px; color: #888;">
+          <div class="status-dot" style="display: inline-block; margin-bottom: 10px;"></div>
+          <p>Syncing live accelerators from GitHub...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ SERVICE CATALOG ═══════ -->
+  <section id="catalog" class="section catalog-section">
+    <div class="container">
+      <div class="section-header reveal" id="catalog-header">
+        <div class="section-tag">Capabilities</div>
+        <h2>Service <span class="gradient-text">Catalog</span></h2>
+        <p>The specialized expertise we bring to your enterprise transformation.</p>
+      </div>
+
+      <div class="catalog-grid">
+        <!-- 1. Cloud -->
+        <div class="catalog-category reveal reveal-delay-1" id="cat-cloud">
+          <span class="cat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257 3 3 0 0 0-3.758-3.848 5.25 5.25 0 0 0-10.233 2.33A4.502 4.502 0 0 0 2.25 15z" /></svg></span>
+          <h4>Cloud</h4>
+          <ul>
+            <li>Azure Landing Zone</li>
+            <li>AWS Foundation</li>
+            <li>GCP Modernization</li>
+            <li>Migration Factory</li>
+          </ul>
+        </div>
+
+        <!-- 2. AI -->
+        <div class="catalog-category reveal reveal-delay-2" id="cat-ai">
+          <span class="cat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" /></svg></span>
+          <h4>AI</h4>
+          <ul>
+            <li>Azure OpenAI Setup</li>
+            <li>Enterprise RAG Platform</li>
+            <li>AI Governance</li>
+            <li>MLOps Execution</li>
+          </ul>
+        </div>
+
+        <!-- 3. DevOps -->
+        <div class="catalog-category reveal reveal-delay-3" id="cat-devops">
+          <span class="cat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" /><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg></span>
+          <h4>DevOps</h4>
+          <ul>
+            <li>Azure DevOps</li>
+            <li>GitHub Actions</li>
+            <li>GitOps Framework</li>
+            <li>Platform Engineering</li>
+          </ul>
+        </div>
+
+        <!-- 4. Data -->
+        <div class="catalog-category reveal reveal-delay-4" id="cat-data">
+          <span class="cat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" /></svg></span>
+          <h4>Data</h4>
+          <ul>
+            <li>Microsoft Fabric</li>
+            <li>Databricks</li>
+            <li>Lakehouse Architecture</li>
+            <li>BI Modernization</li>
+          </ul>
+        </div>
+
+        <!-- 5. Security -->
+        <div class="catalog-category reveal" id="cat-security">
+          <span class="cat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" /></svg></span>
+          <h4>Security</h4>
+          <ul>
+            <li>Zero Trust Model</li>
+            <li>IAM Execution</li>
+            <li>Defender Suite</li>
+            <li>Compliance Automation</li>
+          </ul>
+        </div>
+
+        <!-- 6. VDI / AVD -->
+        <div class="catalog-category reveal" id="cat-vdi">
+          <span class="cat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="12" x="3" y="4" rx="2" ry="2"/><line x1="2" x2="22" y1="20" y2="20"/><line x1="12" x2="12" y1="16" y2="20"/></svg></span>
+          <h4>VDI / AVD</h4>
+          <ul>
+            <li>Azure Virtual Desktop</li>
+            <li>Windows 365</li>
+            <li>FSLogix Optimization</li>
+            <li>Image Automation</li>
+          </ul>
+        </div>
+
+        <!-- 7. Sovereign Cloud -->
+        <div class="catalog-category reveal" id="cat-sovereign">
+          <span class="cat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+          <h4>Sovereign Cloud</h4>
+          <ul>
+            <li>HIPAA & GxP</li>
+            <li>Data Residency</li>
+            <li>Sovereign Controls</li>
+            <li>Audit Readiness</li>
+          </ul>
+        </div>
+
+        <!-- 8. FinOps -->
+        <div class="catalog-category reveal" id="cat-finops">
+          <span class="cat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+          <h4>FinOps</h4>
+          <ul>
+            <li>Cost Optimization</li>
+            <li>Budget Guardrails</li>
+            <li>Anomaly Detection</li>
+            <li>Resource Tagging</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CONTACT ═══════ -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-header reveal">
+        <div class="contact-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19.5 22 15l-4.5-4.5"/><path d="M15 5c0-1.1-.9-2-2-2h-2c-1.1 0-2 .9-2 2v1h6V5Z"/><path d="M7 11V8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/><rect width="18" height="12" x="3" y="11" rx="2"/></svg>
+          Connect With Us
+        </div>
+        <h2 class="contact-title">Ready to <span class="gradient-text">Accelerate?</span></h2>
+        <p class="contact-subtitle">Choose the way that works best for you. We're always ready to help.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left: Info -->
+        <div class="contact-card-new reveal">
+          <div class="card-header-new">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <h3>Contact Information</h3>
+          </div>
+          <p class="card-desc-new">Reach out through any channel. Average response: <span>&lt;2 hours</span></p>
+
+          <div class="info-list">
+            <div class="info-item-new">
+              <div class="info-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="info-content-new">
+                <label>Email</label>
+                <a href="mailto:info@devopstrioglobal.com" class="info-val">info@devopstrioglobal.com</a>
+                <div class="info-badge">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Priority support
+                </div>
+              </div>
+            </div>
+
+            <div class="info-item-new">
+              <div class="info-icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.81 12.81 0 0 0 .62 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.62A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div class="info-content-new">
+                <label>Phone</label>
+                <div class="info-val">Mon-Fri, 9am-6pm EST</div>
+              </div>
+            </div>
+
+            <div class="info-item-new">
+              <div class="info-icon-box whatsapp">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-13.3 8.38 8.38 0 0 1 3.9 1c1.54.94 2.82 2.22 3.7 3.7a8.38 8.38 0 0 1 1 3.8z"></path></svg>
+              </div>
+              <div class="info-content-new">
+                <label>WhatsApp</label>
+                <a href="https://wa.me/447471482903" target="_blank" class="info-val">+44 7471 482903</a>
+                <div class="info-badge green">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                  Instant messaging
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hours-box">
+            <div class="hours-header">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              Business Hours
+            </div>
+            <div class="hours-list">
+              <div class="hour-row">
+                <div class="hour-day"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg> Monday - Friday</div>
+                <div class="hour-time">9:00 AM – 6:00 PM</div>
+              </div>
+              <div class="hour-row">
+                <div class="hour-day"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg> Saturday</div>
+                <div class="hour-time">10:00 AM – 4:00 PM</div>
+              </div>
+              <div class="hour-row closed">
+                <div class="hour-day"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" x2="9" y1="9" y2="15"></line><line x1="9" x2="15" y1="9" y2="15"></line></svg> Sunday</div>
+                <div class="hour-time">Closed</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="contact-card-new reveal reveal-delay-1">
+          <div class="card-header-new">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            <h3>Send a Message</h3>
+          </div>
+          <p class="card-desc-new">Fill out the form below. We'll respond within <span>2-4 hours</span>.</p>
+
+          <form action="#" class="contact-form-new">
+            <div class="form-row-dual">
+              <div class="input-group-new">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <input type="text" placeholder="Full Name *" required>
+              </div>
+              <div class="input-group-new">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <input type="email" placeholder="Work Email *" required>
+              </div>
+            </div>
+            <div class="input-group-new">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              <input type="text" placeholder="Subject">
+            </div>
+            <div class="input-group-new">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              <textarea placeholder="How can we help? *" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit-new">
+              Send Message
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </form>
+
+          <div class="form-footer-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
+            Your information is encrypted and secure. We never share your data.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FINAL CTA ═══════ -->
+  <section class="cta-final">
+    <div class="container cta-container reveal">
+      <div class="cta-content-box">
+        <h2 class="cta-title">Ready to Transform Your <span class="gradient-text">Infrastructure?</span></h2>
+        <p class="cta-subtitle">Join 200+ companies that have modernized their cloud operations with DevOpsTrio.</p>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn-journey">Start Your Journey</a>
+          <a href="https://devopstrio.co.uk/contact" class="btn-expert">Talk to an Expert</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ LOGO BAR ═══════ -->
+  <section class="logo-bar">
+    <div class="container logo-bar-container reveal">
+      <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Logo_of_FOSDEM_%28with_text%29.svg" alt="FOSDEM"><span>FOSDEM</span></div>
+      <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Hashnode_logo.svg" alt="Hashnode"><span>Hashnode</span></div>
+      <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Indie_Hackers.svg" alt="Indie Hackers"><span>Indie Hackers</span></div>
+      <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/GitLab_logo.svg" alt="GitLab"><span>GitLab</span></div>
+      <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Product_Hunt_Logo.svg" alt="Product Hunt"><span>Product Hunt</span></div>
+      <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/General_Data_Protection_Regulation_Logo.svg" alt="GDPR"><span>GDPR</span></div>
+      <div class="logo-item"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/ISO_English_Logo.svg" alt="ISO"><span>ISO Aligned</span></div>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Logo & Description Column -->
+      <div class="footer-column footer-logo-col">
+        <div class="footer-logo">
+          <img src="assets/Browser_logo.png" alt="Devopstrio" class="logo-footer-image" />
+          <svg width="200" height="40" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-text-svg">
+            <text x="0" y="30" fill="#ffffff" font-family="Outfit, sans-serif" font-size="28" font-weight="700">Devopstrio</text>
+            
+          </svg>
+        </div>
+        <p class="footer-description">
+          Transforming businesses through innovative DevOps solutions. We help organizations achieve faster delivery, improved reliability, and scalable infrastructure.
+        </p>
+
+        <!-- Social Media -->
+        <div class="footer-social">
+          <h4 class="footer-social-title">Follow Us</h4>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/company/devopstrioglobal/posts/?feedView=all" target="_blank" rel="noopener noreferrer" class="footer-social-item brand-li" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61579126233218" target="_blank" rel="noopener noreferrer" class="footer-social-item brand-fb" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/devopstrio_offcl/" target="_blank" rel="noopener noreferrer" class="footer-social-item brand-ig" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.805.249 2.227.412.56.216.96.474 1.38.894.42.42.678.82.894 1.38.163.422.358 1.057.412 2.227.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.249 1.805-.412 2.227-.216.56-.474.96-.894 1.38-.42.42-.82.678-1.38.894-.422.163-1.057.358-2.227.412-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.805-.249-2.227-.412-.56-.216-.96-.474-1.38-.894-.42-.42-.678-.82-.894-1.38-.163-.422-.358-1.057-.412-2.227-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.054-1.17.249-1.805.412-2.227.216-.56.474-.96.894-1.38.42-.42.82-.678 1.38-.894.422-.163 1.057-.358 2.227-.412 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.277.057-2.149.259-2.912.556-.788.305-1.456.714-2.122 1.38-.666.666-1.075 1.334-1.38 2.122-.297.763-.499 1.635-.556 2.912-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.057 1.277.259 2.149.556 2.912.305.788.714 1.456 1.38 2.122.666.666 1.334 1.075 2.122 1.38.763.297 1.635.499 2.912.556 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.277-.057 2.149-.259 2.912-.556.788-.305 1.456-.714 2.122-1.38.666-.666 1.075-1.334 1.38-2.122.297-.763.499-1.635.556-2.912.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.057-1.277-.259-2.149-.556-2.912-.305-.788-.714-1.456-1.38-2.122-.666-.666-1.334-1.075-2.122-1.38-.763-.297-1.635-.499-2.912-.556-1.28-.058-1.688-.072-4.947-.072z"/><path d="M12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@Devopstrioltd" target="_blank" rel="noopener noreferrer" class="footer-social-item brand-yt" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services Column -->
+      <div class="footer-column">
+        <h3 class="footer-column-title">
+          <svg class="title-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          Services
+        </h3>
+        <ul class="footer-links">
+          <li><a href="https://devopstrio.co.uk/services/devops-enablement"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> DevOps Consulting</a></li>
+          <li><a href="https://devopstrio.co.uk/services/cloud-migration"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Cloud Migration</a></li>
+          <li><a href="https://devopstrio.co.uk/services/cicd"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> CI/CD Pipeline</a></li>
+          <li><a href="https://devopstrio.co.uk/services/iac"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Infrastructure as Code</a></li>
+          <li><a href="https://devopstrio.co.uk/services/cloud-architecture"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Kubernetes Solutions</a></li>
+        </ul>
+      </div>
+
+      <!-- Industries Column -->
+      <div class="footer-column">
+        <h3 class="footer-column-title">
+          <svg class="title-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          Industries
+        </h3>
+        <ul class="footer-links">
+          <li><a href="https://devopstrio.co.uk/marketplace"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> FinTech</a></li>
+          <li><a href="https://devopstrio.co.uk/marketplace"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Healthcare</a></li>
+          <li><a href="https://devopstrio.co.uk/platform/retail"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> E-commerce</a></li>
+          <li><a href="https://devopstrio.co.uk/platform/saas-applications"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> SaaS</a></li>
+          <li><a href="https://devopstrio.co.uk/contact"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Telecom</a></li>
+        </ul>
+      </div>
+
+      <!-- Company Column -->
+      <div class="footer-column">
+        <h3 class="footer-column-title">
+          <svg class="title-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          Company
+        </h3>
+        <ul class="footer-links">
+          <li><a href="https://devopstrio.co.uk/about"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> About Us</a></li>
+          <li><a href="https://devopstrio.co.uk/contact"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Contact Us</a></li>
+          <li><a href="https://devopstrio.co.uk/insights-knowledge/newsletters"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> News</a></li>
+          <li><a href="https://devopstrio.co.uk/insights-knowledge/blogs"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Blog</a></li>
+          <li><a href="https://devopstrio.co.uk/news-events/industry-events"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Events</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info Column -->
+      <div class="footer-column footer-contact-col">
+        <h3 class="footer-column-title">
+          <svg class="title-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          Contact Info
+        </h3>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <svg class="contact-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <div>
+              <p class="contact-label">Headquarters</p>
+              <p class="contact-text">128, City Road, London, EC1V 2NX<br>United Kingdom</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <svg class="contact-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.81 12.81 0 0 0 .62 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.62A2 2 0 0 1 22 16.92z"></path></svg>
+            <div>
+              <p class="contact-label">Phone</p>
+              <p class="contact-text">+44 7471 482903</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <svg class="contact-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <div>
+              <p class="contact-label">Email</p>
+              <p class="contact-text">info@devopstrioglobal.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <div class="copyright">
+          © <span id="current-year">2026</span> Devopstrio. All rights reserved.
+        </div>
+
+        <div class="footer-bottom-links">
+          <a href="https://devopstrio.co.uk/sitemap" class="bottom-link">Sitemap</a>
+          <a href="https://devopstrio.co.uk/privacy-policy" class="bottom-link">Privacy Policy</a>
+          <a href="https://devopstrio.co.uk/terms-of-service" class="bottom-link">Terms of Service</a>
+          <a href="https://devopstrio.co.uk/cookie-policy" class="bottom-link">Cookie Policy</a>
+          <a href="https://devopstrio.co.uk/footer-compliance" class="bottom-link">GDPR Compliance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
