@@ -7,7 +7,7 @@
   <title>Devopstrio | Cloud · AI · DevOps Acceleration Platform</title>
   <meta name="description"
     content="Enterprise Landing Zone & AI Transformation Specialists. Open-source blueprints, Terraform modules, and GenAI-ready architectures by Devopstrio.">
-  <meta name="theme-color" content="#060b14">
+  <meta name="theme-color" content="#000000">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -29,7 +29,7 @@
       <nav>
         <ul class="nav-links">
           <li><a href="https://devopstrio.co.uk/services">Services</a></li>
-          <li><a href="https://devopstrio.co.uk/platform">Platform</a></li>
+          <li><a href="https://devopstrio.co.uk/ecosystem/platforms-solutions/saas-platforms">Platform</a></li>
           <li><a href="#repos">Ecosystem</a></li>
           <li><a href="https://devopstrio.co.uk/insights">Insights</a></li>
           <li><a href="https://devopstrio.co.uk/careers">Careers</a></li>
@@ -230,75 +230,201 @@
         <p>Curated solutions for rapid digital modernization across Cloud, AI, and DevOps.</p>
       </div>
 
-      <div class="tier-grid">
-        <div class="tier-card reveal reveal-delay-1" id="tier-cloud">
-          <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path
-                d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
-            </svg></span>
-          <h3>Enterprise Landing Zone</h3>
-          <p>CAF-based governance foundations for Azure, AWS, and GCP with policy-as-code and subscription vending.</p>
-          <ul class="card-features">
-            <li>Multi-tenant Governance</li>
-            <li>Network Segmentation</li>
-            <li>Identity Integration</li>
-          </ul>
-          <a href="#repos" class="card-link">Explore blueprints →</a>
-        </div>
+      <div class="tier-carousel-container">
+        <button class="carousel-nav-btn prev" id="carousel-prev" aria-label="Previous Bundle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="carousel-nav-btn next" id="carousel-next" aria-label="Next Bundle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
 
-        <div class="tier-card featured reveal reveal-delay-2" id="tier-ai">
-          <div class="featured-label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-              width="11" height="11">
-              <path fill-rule="evenodd"
-                d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
-                clip-rule="evenodd" />
-            </svg> Top Choice</div>
-          <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path
-                d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0 3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" />
-            </svg></span>
-          <h3>AI Landing Zone</h3>
-          <p>GenAI-ready. Secure OpenAI, Bedrock, and Vertex AI deployment at enterprise scale with RAG pipelines.</p>
-          <ul class="card-features">
-            <li>Enterprise RAG Ready</li>
-            <li>AI Governance &amp; Safety</li>
-            <li>Scalable LLM Pipelines</li>
-          </ul>
-          <a href="#repos" class="card-link">Explore blueprints →</a>
-        </div>
+        <div class="tier-carousel-viewport">
+          <div class="tier-grid" id="tier-carousel-track">
+            <div class="tier-card reveal reveal-delay-1" id="tier-cloud" data-index="0">
+              <span class="tier-repo-badge"><span class="stat-counter" data-target="58">0</span> Repos</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+                </svg></span>
+              <h3>Enterprise Landing Zone</h3>
+              <div class="tier-accent-line"></div>
+              <div class="tier-stats-row">
+                <span class="stat-item-pill"><strong>58</strong> Repositories</span>
+                <span class="stat-item-pill">Enterprise</span>
+                <span class="stat-item-pill">Production Ready</span>
+              </div>
+              <p>CAF-based enterprise governance foundations across Azure, AWS and GCP with policy automation.</p>
+              <div class="tier-capability-chips">
+                <span class="tier-chip"><span class="chip-icon">✔</span> Multi-tenant Governance</span>
+                <span class="tier-chip"><span class="chip-icon">✔</span> Network Segmentation</span>
+                <span class="tier-chip"><span class="chip-icon">✔</span> Identity Integration</span>
+              </div>
+              <div class="tier-stats-strip">
+                <div class="strip-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                  <span>58 Repos</span>
+                </div>
+                <div class="strip-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <span>Enterprise</span>
+                </div>
+                <div class="strip-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+                  <span>Cloud Scale</span>
+                </div>
+              </div>
+              <a href="#repos" class="card-link" data-filter="landing-zone">Explore blueprints →</a>
+            </div>
 
-        <div class="tier-card reveal reveal-delay-3" id="tier-data">
-          <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path
-                d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
-            </svg></span>
-          <h3>Data Landing Zone</h3>
-          <p>Lakehouse architectures with Microsoft Fabric, Databricks, and Snowflake for real-time analytics.</p>
-          <ul class="card-features">
-            <li>Real-time Analytics</li>
-            <li>Data Mesh Patterns</li>
-            <li>Automated Governance</li>
-          </ul>
-          <a href="#repos" class="card-link">Explore blueprints →</a>
-        </div>
+            <div class="tier-card featured reveal reveal-delay-2" id="tier-ai" data-index="1">
+              <span class="tier-repo-badge"><span class="stat-counter" data-target="72">0</span> Repos</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0 3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" />
+                </svg></span>
+              <h3>AI Landing Zone</h3>
+              <div class="tier-accent-line"></div>
+              <div class="tier-stats-row">
+                <span class="stat-item-pill"><strong>72</strong> Repositories</span>
+                <span class="stat-item-pill">GenAI Ready</span>
+                <span class="stat-item-pill">Production Ready</span>
+              </div>
+              <p>Secure enterprise AI across OpenAI, Bedrock and Vertex AI.</p>
+              <div class="tier-capability-chips">
+                <span class="tier-chip"><span class="chip-icon">✔</span> Enterprise RAG</span>
+                <span class="tier-chip"><span class="chip-icon">✔</span> AI Governance</span>
+                <span class="tier-chip"><span class="chip-icon">✔</span> LLM Pipelines</span>
+              </div>
+              <div class="tier-stats-strip">
+                <div class="strip-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                  <span>72 Repos</span>
+                </div>
+                <div class="strip-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <span>GenAI Safe</span>
+                </div>
+                <div class="strip-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+                  <span>LLM Scale</span>
+                </div>
+              </div>
+              <a href="#repos" class="card-link" data-filter="ai">Explore blueprints →</a>
+            </div>
 
-        <div class="tier-card reveal reveal-delay-4" id="tier-security">
-          <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path
-                d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
-            </svg></span>
-          <h3>Security &amp; Compliance</h3>
-          <p>Zero Trust architecture, IAM blueprints, and Defender suite automation aligned to CIS and NIST.</p>
-          <ul class="card-features">
-            <li>Zero Trust Model</li>
-            <li>Compliance Automation</li>
-            <li>DevSecOps Pipelines</li>
-          </ul>
-          <a href="#repos" class="card-link">Explore blueprints →</a>
+            <div class="tier-card reveal reveal-delay-3" id="tier-data" data-index="2">
+              <span class="tier-repo-badge"><span class="stat-counter" data-target="56">0</span> Repos</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+                </svg></span>
+              <h3>Data Landing Zone</h3>
+              <div class="tier-accent-line"></div>
+              <div class="tier-stats-row">
+                <span class="stat-item-pill"><strong>56</strong> Repositories</span>
+                <span class="stat-item-pill">Lakehouse</span>
+                <span class="stat-item-pill">Production Ready</span>
+              </div>
+              <p>Enterprise-ready lakehouse platform with automated data governance and real-time analytics.</p>
+              <div class="tier-capability-chips">
+                <span class="tier-chip"><span class="chip-icon">✔</span> Lakehouse</span>
+                <span class="tier-chip"><span class="chip-icon">✔</span> Data Governance</span>
+                <span class="tier-chip"><span class="chip-icon">✔</span> Real-time Analytics</span>
+              </div>
+              <div class="tier-stats-strip">
+                <div class="strip-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                  <span>56 Repos</span>
+                </div>
+                <div class="strip-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <span>Data Mesh</span>
+                </div>
+                <div class="strip-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+                  <span>Real-time</span>
+                </div>
+              </div>
+              <a href="#repos" class="card-link" data-filter="ai">Explore blueprints →</a>
+            </div>
+
+            <div class="tier-card reveal reveal-delay-4" id="tier-security" data-index="3">
+              <span class="tier-repo-badge"><span class="stat-counter" data-target="48">0</span> Repos</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                </svg></span>
+              <h3>Security &amp; Compliance</h3>
+              <div class="tier-accent-line"></div>
+              <div class="tier-stats-row">
+                <span class="stat-item-pill"><strong>48</strong> Repositories</span>
+                <span class="stat-item-pill">Zero Trust</span>
+                <span class="stat-item-pill">CIS / NIST Aligned</span>
+              </div>
+              <p>Zero Trust cloud security architecture with compliance automation and continuous threat monitoring.</p>
+              <div class="tier-capability-chips">
+                <span class="tier-chip"><span class="chip-icon">✔</span> Zero Trust</span>
+                <span class="tier-chip"><span class="chip-icon">✔</span> Compliance</span>
+                <span class="tier-chip"><span class="chip-icon">✔</span> Threat Protection</span>
+              </div>
+              <div class="tier-stats-strip">
+                <div class="strip-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                  <span>48 Repos</span>
+                </div>
+                <div class="strip-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <span>Zero Trust</span>
+                </div>
+                <div class="strip-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+                  <span>Automated</span>
+                </div>
+              </div>
+              <a href="#repos" class="card-link" data-filter="security">Explore blueprints →</a>
+            </div>
+
+            <div class="tier-card reveal reveal-delay-4" id="tier-multicloud" data-index="4">
+              <span class="tier-repo-badge"><span class="stat-counter" data-target="65">0</span> Repos</span>
+              <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75z" />
+                </svg></span>
+              <h3>Multi-Cloud Landing Zone</h3>
+              <div class="tier-accent-line"></div>
+              <div class="tier-stats-row">
+                <span class="stat-item-pill"><strong>65</strong> Repositories</span>
+                <span class="stat-item-pill">Azure / AWS / GCP</span>
+                <span class="stat-item-pill">Cross-Cloud</span>
+              </div>
+              <p>Unified Azure, AWS and GCP governance from one enterprise control plane.</p>
+              <div class="tier-capability-chips">
+                <span class="tier-chip"><span class="chip-icon">✔</span> Cross-Cloud Governance</span>
+                <span class="tier-chip"><span class="chip-icon">✔</span> Policy Automation</span>
+                <span class="tier-chip"><span class="chip-icon">✔</span> Hybrid Networking</span>
+              </div>
+              <div class="tier-stats-strip">
+                <div class="strip-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                  <span>65 Repos</span>
+                </div>
+                <div class="strip-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <span>Multi-Cloud</span>
+                </div>
+                <div class="strip-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/></svg>
+                  <span>Hybrid Mesh</span>
+                </div>
+              </div>
+              <a href="#repos" class="card-link" data-filter="multicloud">Explore blueprints →</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -337,10 +463,27 @@
         <p>Production-grade blueprints that establish instant credibility and accelerate delivery.</p>
       </div>
 
+      <!-- Search Bar -->
+      <div class="repo-search-container reveal" id="repo-search-container">
+        <div class="search-input-wrapper">
+          <span class="search-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input type="text" id="repo-search-input" placeholder="Search repositories by name, description, topic or tech..." aria-label="Search repositories" autocomplete="off" spellcheck="false">
+          <button id="repo-search-clear" class="search-clear-btn" aria-label="Clear search" style="display:none;" type="button">&times;</button>
+          <kbd class="search-shortcut-badge">Ctrl K</kbd>
+        </div>
+      </div>
+
       <!-- Filter Bar -->
       <div class="filter-bar reveal" id="filter-bar">
         <button class="filter-btn active" data-filter="all" id="filter-all">All (180+)</button>
         <button class="filter-btn" data-filter="landing-zone" id="filter-lz">Landing Zones</button>
+        <button class="filter-btn" data-filter="multicloud" id="filter-multicloud">Multicloud</button>
         <button class="filter-btn" data-filter="ai" id="filter-ai">AI & Data</button>
         <button class="filter-btn" data-filter="security" id="filter-security">Security</button>
         <button class="filter-btn" data-filter="vdi" id="filter-vdi">VDI / AVD</button>
@@ -358,6 +501,9 @@
           <p>Syncing live accelerators from GitHub...</p>
         </div>
       </div>
+
+      <!-- Pagination Container (Dynamic) -->
+      <div id="pagination-container" class="pagination-container"></div>
     </div>
   </section>
 
@@ -698,11 +844,11 @@
           Services
         </h3>
         <ul class="footer-links">
-          <li><a href="https://devopstrio.co.uk/services/devops-enablement"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> DevOps Consulting</a></li>
-          <li><a href="https://devopstrio.co.uk/services/cloud-migration"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Cloud Migration</a></li>
-          <li><a href="https://devopstrio.co.uk/services/cicd"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> CI/CD Pipeline</a></li>
-          <li><a href="https://devopstrio.co.uk/services/iac"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Infrastructure as Code</a></li>
-          <li><a href="https://devopstrio.co.uk/services/cloud-architecture"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Kubernetes Solutions</a></li>
+          <li><a href="https://devopstrio.co.uk/services/devops-automation"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> DevOps Consulting</a></li>
+          <li><a href="https://devopstrio.co.uk/services/cloud-services"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Cloud Migration</a></li>
+          <li><a href="https://devopstrio.co.uk/services/explore"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> CI/CD Pipeline</a></li>
+          <li><a href="https://devopstrio.co.uk/services/explore"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Infrastructure as Code</a></li>
+          <li><a href="https://devopstrio.co.uk/services/explore"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Kubernetes Solutions</a></li>
         </ul>
       </div>
 
@@ -713,11 +859,11 @@
           Industries
         </h3>
         <ul class="footer-links">
-          <li><a href="https://devopstrio.co.uk/marketplace"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> FinTech</a></li>
-          <li><a href="https://devopstrio.co.uk/marketplace"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Healthcare</a></li>
-          <li><a href="https://devopstrio.co.uk/platform/retail"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> E-commerce</a></li>
-          <li><a href="https://devopstrio.co.uk/platform/saas-applications"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> SaaS</a></li>
-          <li><a href="https://devopstrio.co.uk/contact"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Telecom</a></li>
+          <li><a href="https://devopstrio.co.uk/industries/banking-finance"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> FinTech</a></li>
+          <li><a href="https://devopstrio.co.uk/industries/healthcare-life-sciences"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Healthcare</a></li>
+          <li><a href="https://devopstrio.co.uk/industries/retail-ecommerce"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> E-commerce</a></li>
+          <li><a href="https://devopstrio.co.uk/ecosystem/platforms-solutions/saas-platforms"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> SaaS</a></li>
+          <li><a href="https://devopstrio.co.uk/industries/telecommunications"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Telecom</a></li>
         </ul>
       </div>
 
@@ -730,9 +876,9 @@
         <ul class="footer-links">
           <li><a href="https://devopstrio.co.uk/about"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> About Us</a></li>
           <li><a href="https://devopstrio.co.uk/contact"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Contact Us</a></li>
-          <li><a href="https://devopstrio.co.uk/insights-knowledge/newsletters"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> News</a></li>
-          <li><a href="https://devopstrio.co.uk/insights-knowledge/blogs"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Blog</a></li>
-          <li><a href="https://devopstrio.co.uk/news-events/industry-events"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Events</a></li>
+          <li><a href="https://devopstrio.co.uk/insights/white-paper"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> News</a></li>
+          <li><a href="https://devopstrio.co.uk/insights/blogs"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Blog</a></li>
+          <li><a href="https://devopstrio.co.uk/insights/industry-events"><svg class="link-icon-svg" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg> Events</a></li>
         </ul>
       </div>
 
@@ -783,7 +929,7 @@
           <a href="https://devopstrio.co.uk/privacy-policy" class="bottom-link">Privacy Policy</a>
           <a href="https://devopstrio.co.uk/terms-of-service" class="bottom-link">Terms of Service</a>
           <a href="https://devopstrio.co.uk/cookie-policy" class="bottom-link">Cookie Policy</a>
-          <a href="https://devopstrio.co.uk/footer-compliance" class="bottom-link">GDPR Compliance</a>
+          <a href="https://devopstrio.co.uk/gdpr" class="bottom-link">GDPR Compliance</a>
         </div>
       </div>
     </div>
