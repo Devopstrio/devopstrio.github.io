@@ -413,8 +413,9 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             let allRepos = [];
             let page = 1;
+            let hasMorePages = true;
 
-            while (page <= 10) {
+            while (hasMorePages) {
                 const res = await fetch(
                     `https://api.github.com/orgs/${GITHUB_ORG}/repos?per_page=100&page=${page}&sort=pushed&type=public`,
                     { headers }
@@ -427,10 +428,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
 
                 const batch = await res.json();
-                if (!batch.length) break;
+                if (!batch || !batch.length) break;
 
                 allRepos = allRepos.concat(batch.filter(r => !r.fork && !r.archived));
-                page++;
+                if (batch.length < 100) {
+                    hasMorePages = false;
+                } else {
+                    page++;
+                }
             }
 
             // Sanitize API repos
@@ -480,7 +485,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 syncBadge.innerHTML = `
                     <span style="display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;color:#EF5350;background:rgba(211,47,47,0.1);border:1px solid rgba(211,47,47,0.25);border-radius:99px;padding:4px 14px;font-weight:600;">
                         <span style="width:6px;height:6px;border-radius:50%;background:#D32F2F;display:inline-block;box-shadow:0 0 8px #D32F2F;"></span>
-                        Live · ${allRepos.length} repos loaded from GitHub
+                        Live · ${allRepos.length} Repositories Loaded from GitHub (AWS, Azure, GCP, AI & DevOps)
                     </span>`;
             }
 
@@ -526,7 +531,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const topicsStr = normalizeSearchQuery((repo.topics || []).join(' '));
                 const catStr = normalizeSearchQuery((repo.category || '') + ' ' + mapTopicsToCategories(repo).join(' '));
                 const langStr = normalizeSearchQuery(repo.language || '');
-                const combinedText = `${nameStr} ${descStr} ${topicsStr} ${catStr} ${langStr}`;
+                const urlStr = normalizeSearchQuery(repo.html_url || '');
+                const combinedText = `${nameStr} ${descStr} ${topicsStr} ${catStr} ${langStr} ${urlStr}`;
 
                 return queryWords.every(word => combinedText.includes(word));
             });
@@ -763,19 +769,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function mapTopicsToCategories(repo) {
         const topics = (repo.topics || []).map(t => t.toLowerCase());
-        const name = repo.name.toLowerCase();
+        const name = (repo.name || '').toLowerCase();
+        const desc = (repo.description || '').toLowerCase();
+        const lang = (repo.language || '').toLowerCase();
         const cats = new Set();
 
         const matches = (topicList, nameFragments = []) =>
-            topics.some(t => topicList.includes(t)) || nameFragments.some(f => name.includes(f));
+            topics.some(t => topicList.includes(t)) ||
+            nameFragments.some(f => name.includes(f) || desc.includes(f) || lang.includes(f));
 
-        if (matches(['landing-zone','caf','governance','subscription'], ['landingzone','landing-zone'])) cats.add('landing-zone');
-        if (matches(['multicloud','multi-cloud','hybrid-cloud','aws-azure','cross-cloud','azure-aws'], ['multicloud','multi-cloud','cross-cloud','hybrid-cloud'])) cats.add('multicloud');
-        if (matches(['ai','openai','llm','rag','genai','fabric','databricks','ml','mlops'], ['ai','data','llm','rag','genai','mlflow','lakehouse'])) cats.add('ai');
+        if (matches(['landing-zone','caf','governance','subscription'], ['landingzone','landing-zone','landing zone'])) cats.add('landing-zone');
+        
+        // MultiCloud category includes AWS, Azure, GCP, Bicep, Terraform, CloudFormation, Hybrid Cloud & Cross-Cloud
+        if (matches(
+            ['multicloud','multi-cloud','hybrid-cloud','aws-azure','cross-cloud','azure-aws','aws','azure','gcp','cloud','bicep','terraform','cloudformation','google-cloud','amazon','microsoft-azure'],
+            ['multicloud','multi-cloud','cross-cloud','hybrid-cloud','aws','azure','gcp','bicep','cloudformation','terraform','google','amazon','microsoft','az-','aws-','gcp-']
+        )) cats.add('multicloud');
+
+        if (matches(['ai','openai','llm','rag','genai','fabric','databricks','ml','mlops'], ['ai','data','llm','rag','genai','mlflow','lakehouse','openai'])) cats.add('ai');
         if (matches(['security','zero-trust','defender','iam','compliance','siem','devsecops'], ['security','trust','zero-trust','compliance','siem','vault','privileged'])) cats.add('security');
         if (matches(['vdi','avd','w365','desktop','fslogix'], ['avd','vdi','w365','windows-365'])) cats.add('vdi');
         if (matches(['fintech','healthcare','telecom','retail','industry','bank','government'], ['lz','financial','healthcare','insurance','automotive'])) cats.add('industry');
-        if (matches(['devops','terraform','bicep','actions','cicd','yaml','gitops','ansible','kubernetes','docker'], ['devops','tf-','terraform','bicep','platform','k8s','helm','gitops'])) cats.add('devops');
+        if (matches(['devops','terraform','bicep','actions','cicd','yaml','gitops','ansible','kubernetes','docker'], ['devops','tf-','terraform','bicep','platform','k8s','helm','gitops','automation'])) cats.add('devops');
 
         if (cats.size === 0) cats.add('devops');
         return Array.from(cats);
