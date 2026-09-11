@@ -317,6 +317,13 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'aws-landing-zone-accelerator', html_url: 'https://github.com/Devopstrio/aws-landing-zone-accelerator', description: 'AWS Control Tower and Landing Zone Accelerator LZA deployment blueprint for enterprise multi-account environments.', category: 'landing-zone', language: 'TypeScript', stargazers_count: 36, pushed_at: '2026-07-21T10:00:00Z' },
         { name: 'aws-security-hub-automation', html_url: 'https://github.com/Devopstrio/aws-security-hub-automation', description: 'AWS Security Hub, GuardDuty, and Config auto-remediation framework using Terraform.', category: 'security', language: 'HCL', stargazers_count: 27, pushed_at: '2026-07-20T10:00:00Z' },
         { name: 'gcp-enterprise-foundation', html_url: 'https://github.com/Devopstrio/gcp-enterprise-foundation', description: 'Google Cloud GCP Enterprise Foundation blueprint with Org policies, Shared VPCs, and IAM.', category: 'landing-zone', language: 'HCL', stargazers_count: 31, pushed_at: '2026-07-19T10:00:00Z' },
+        { name: 'azure-avd-enterprise-landingzone', html_url: 'https://github.com/Devopstrio/azure-avd-enterprise-landingzone', description: 'Azure Virtual Desktop AVD enterprise landing zone blueprint with FSLogix profile containers, host pool auto-scaling, and Zero-Trust access.', category: 'vdi', language: 'Bicep', stargazers_count: 34, pushed_at: '2026-07-28T10:00:00Z' },
+        { name: 'w365-cloud-pc-automation', html_url: 'https://github.com/Devopstrio/w365-cloud-pc-automation', description: 'Windows 365 Cloud PC automated provisioning, Intune policy management, and user environment lifecycle scripts.', category: 'vdi', language: 'PowerShell', stargazers_count: 28, pushed_at: '2026-07-27T10:00:00Z' },
+        { name: 'vdi-golden-image-pipeline', html_url: 'https://github.com/Devopstrio/vdi-golden-image-pipeline', description: 'Automated HashiCorp Packer and Azure Image Builder pipeline for building patched VDI and AVD session host golden images.', category: 'vdi', language: 'HCL', stargazers_count: 31, pushed_at: '2026-07-26T10:00:00Z' },
+        { name: 'fintech-banking-cloud-blueprint', html_url: 'https://github.com/Devopstrio/fintech-banking-cloud-blueprint', description: 'PCI-DSS and ISO27001 compliant cloud landing zone blueprint designed for FinTech, open banking, and core payment platforms.', category: 'industry', language: 'HCL', stargazers_count: 46, pushed_at: '2026-07-25T10:00:00Z' },
+        { name: 'healthcare-hipaa-landingzone', html_url: 'https://github.com/Devopstrio/healthcare-hipaa-landingzone', description: 'HIPAA and HITRUST compliant Azure and AWS cloud data platform for healthcare and life sciences analytics.', category: 'industry', language: 'Bicep', stargazers_count: 39, pushed_at: '2026-07-24T10:00:00Z' },
+        { name: 'retail-ecommerce-microservices', html_url: 'https://github.com/Devopstrio/retail-ecommerce-microservices', description: 'High-throughput retail e-commerce cloud platform blueprint built on Kubernetes microservices and serverless.', category: 'industry', language: 'TypeScript', stargazers_count: 42, pushed_at: '2026-07-23T10:00:00Z' },
+        { name: 'telecom-5g-edge-cloud', html_url: 'https://github.com/Devopstrio/telecom-5g-edge-cloud', description: 'Open RAN and 5G edge computing multi-cloud orchestration framework for telecommunications infrastructure.', category: 'industry', language: 'Go', stargazers_count: 37, pushed_at: '2026-07-22T10:00:00Z' },
         { name: 'Enterprise-AI-Governance', html_url: 'https://github.com/Devopstrio/Enterprise-AI-Governance', description: 'Comprehensive AI governance and compliance framework aligned to EU AI Act and NIST AI RMF.', category: 'security', stargazers_count: 48, pushed_at: '2026-07-03T10:00:00Z' },
         { name: 'model-risk-governance', html_url: 'https://github.com/Devopstrio/model-risk-governance', description: 'Enterprise model risk management platform tracking AI model risk profiles and approvals.', category: 'security', stargazers_count: 21, pushed_at: '2026-07-02T10:00:00Z' },
         { name: 'ai-policy-engine', html_url: 'https://github.com/Devopstrio/ai-policy-engine', description: 'Policy enforcement engine for AI guardrails, model access control, and data privacy.', category: 'security', stargazers_count: 27, pushed_at: '2026-07-01T10:00:00Z' },
@@ -788,19 +795,19 @@ document.addEventListener('DOMContentLoaded', () => {
             topics.some(t => topicList.includes(t)) ||
             nameFragments.some(f => name.includes(f) || desc.includes(f) || lang.includes(f));
 
-        if (matches(['landing-zone','caf','governance','subscription'], ['landingzone','landing-zone','landing zone'])) cats.add('landing-zone');
+        if (matches(['landing-zone','caf','governance','subscription','landingzone'], ['landingzone','landing-zone','landing zone','foundation','bootstrap','starter'])) cats.add('landing-zone');
         
-        // MultiCloud category includes AWS, Azure, GCP, Bicep, Terraform, CloudFormation, Hybrid Cloud & Cross-Cloud
+        // MultiCloud category includes ALL AWS, Azure, GCP, Bicep, Terraform, CloudFormation, Hybrid Cloud & Cross-Cloud blueprints
         if (matches(
-            ['multicloud','multi-cloud','hybrid-cloud','aws-azure','cross-cloud','azure-aws','aws','azure','gcp','cloud','bicep','terraform','cloudformation','google-cloud','amazon','microsoft-azure'],
-            ['multicloud','multi-cloud','cross-cloud','hybrid-cloud','aws','azure','gcp','bicep','cloudformation','terraform','google','amazon','microsoft','az-','aws-','gcp-']
+            ['multicloud','multi-cloud','hybrid-cloud','aws-azure','cross-cloud','azure-aws','aws','azure','gcp','cloud','bicep','terraform','cloudformation','google-cloud','amazon','microsoft-azure','cloudops','iac'],
+            ['multicloud','multi-cloud','cross-cloud','hybrid-cloud','aws','azure','gcp','bicep','cloudformation','terraform','google','amazon','microsoft','az-','aws-','gcp-','cloud','iac']
         )) cats.add('multicloud');
 
-        if (matches(['ai','openai','llm','rag','genai','fabric','databricks','ml','mlops'], ['ai','data','llm','rag','genai','mlflow','lakehouse','openai'])) cats.add('ai');
-        if (matches(['security','zero-trust','defender','iam','compliance','siem','devsecops'], ['security','trust','zero-trust','compliance','siem','vault','privileged'])) cats.add('security');
-        if (matches(['vdi','avd','w365','desktop','fslogix'], ['avd','vdi','w365','windows-365'])) cats.add('vdi');
-        if (matches(['fintech','healthcare','telecom','retail','industry','bank','government'], ['lz','financial','healthcare','insurance','automotive'])) cats.add('industry');
-        if (matches(['devops','terraform','bicep','actions','cicd','yaml','gitops','ansible','kubernetes','docker'], ['devops','tf-','terraform','bicep','platform','k8s','helm','gitops','automation'])) cats.add('devops');
+        if (matches(['ai','openai','llm','rag','genai','fabric','databricks','ml','mlops','data'], ['ai','data','llm','rag','genai','mlflow','lakehouse','openai','analytics','speech','cognitive'])) cats.add('ai');
+        if (matches(['security','zero-trust','defender','iam','compliance','siem','devsecops','policy','vault'], ['security','trust','zero-trust','compliance','siem','vault','privileged','sentinel','defender','guardrail','pci','hipaa'])) cats.add('security');
+        if (matches(['vdi','avd','w365','desktop','fslogix','virtual-desktop','citrix','horizon','session-host','remote-desktop'], ['avd','vdi','w365','windows-365','virtual desktop','desktop','remote desktop','workspace','fslogix','packer','session host'])) cats.add('vdi');
+        if (matches(['fintech','healthcare','telecom','retail','industry','bank','banking','finance','health','life-sciences','ecommerce','e-commerce','saas','telecommunications','pharma','energy','retail-ecommerce'], ['fintech','banking','finance','healthcare','health','life-sciences','retail','ecommerce','e-commerce','saas','telecom','telecommunications','pharma','energy','automotive','insurance','public-sector','government','pci-dss','hipaa','open ran','5g'])) cats.add('industry');
+        if (matches(['devops','terraform','bicep','actions','cicd','yaml','gitops','ansible','kubernetes','docker','helm','platform'], ['devops','tf-','terraform','bicep','platform','k8s','helm','gitops','automation','pipeline','sdk','cli','orchestrat'])) cats.add('devops');
 
         if (cats.size === 0) cats.add('devops');
         return Array.from(cats);
